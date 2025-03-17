@@ -1,0 +1,33 @@
+# Función para calcular la temperatura promedio por ciudad
+def calcular_temperatura_promedio(datos_temperaturas):
+    """
+    Calcula la temperatura promedio de cada ciudad a partir de una lista de temperaturas semanales.
+    :param datos_temperaturas: Diccionario con el nombre de la ciudad como clave y una lista de temperaturas semanales como valor.
+    :return: Diccionario con las ciudades y sus respectivas temperaturas promedio.
+    """
+    promedios = {}
+    for ciudad, temperaturas in datos_temperaturas.items():
+        promedios[ciudad] = sum(temperaturas) / len(temperaturas)
+    return promedios
+
+# Datos de temperaturas: 3 ciudades durante 4 semanas
+datos_temperaturas = {
+    "Quito": [18, 20, 19, 17],
+    "Guayaquil": [28, 30, 29, 27],
+    "Cuenca": [15, 16, 14, 15]
+}
+
+# Llamada a la función y almacenamiento del resultado
+resultados = calcular_temperatura_promedio(datos_temperaturas)
+
+# Mostrar resultados
+for ciudad, promedio in resultados.items():
+    print(f"La temperatura promedio en {ciudad} es {promedio:.2f}°C")
+
+# Instrucciones para subir el código a GitHub:
+# 1. Guardar el archivo en el proyecto de PyCharm.
+# 2. Abrir la terminal en PyCharm y ejecutar los siguientes comandos:
+#    git add .
+#    git commit -m "Añadida función para calcular temperatura promedio"
+#    git push origin main  # (o el nombre de la rama principal en tu repo)
+# 3. Confirmar que los cambios aparecen en GitHub.
